@@ -1,12 +1,12 @@
 def enumeration(A):
-    maxSum = A[0]
+    maxSum = 0
     for i in range(0, len(A)):
-        newA = []
-        newA.append(A[i])
-        for j in range(i+1, len(A)):
-            newA.append(A[j])
-            if maxSum < sum(newA):
-                maxSum = sum(newA)
+        tempSum = 0
+        for j in range(i, len(A)):
+            tempSum += A[j]
+            if maxSum < tempSum:
+                maxSum = tempSum
+            
     return maxSum
                
 
