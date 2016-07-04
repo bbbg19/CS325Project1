@@ -1,4 +1,6 @@
-
+#!/usr/bin/python
+import time
+import random
 
 def mss(array, low, high):
 	if(low == high):
@@ -18,7 +20,6 @@ def getCS(array,low,mid, high):
 	sum =0
 	#get left sum
 	for x in range(mid,low, -1):
-		print "x:" + str(x)
 		sum += array[x]
 		if sum > maxleft:
 			maxleft = sum
@@ -31,9 +32,26 @@ def getCS(array,low,mid, high):
 			maxright = sum	
 	return maxleft + maxright 
 
-  
+ 
+def generateArray(x):
+	myList =[]
+	for i in range(1,x):
+		myList.append(random.randrange(-1000,1000))
+		
+	return myList
+ 
   	
 #main function
-mylist = [31, -41, 59, 26, -53, 58, 97, -93, -23, 8]
-print mss(mylist,0, len(mylist)-1)
+sizes = [11,51,101,501,1001,5001,10001,50001]
+
+for size in sizes:
+	print "Running sizes for " + str(size)
+	#run ten trials in this size
+	for x in range (1,11):
+		To = time.time()
+		myList = generateArray(size)
+		
+		print mss(myList,0, len(myList)-1)
+		print "Trial Run " + str(x) + ". Time: " + str(time.time()-To)
+	
 
