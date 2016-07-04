@@ -1,9 +1,8 @@
 def enumeration(A):
     maxSum = A[0]
     for i in range(0, len(A)):
-        num = A[i]
         newA = []
-        newA.append(num)
+        newA.append(A[i])
         for j in range(i+1, len(A)):
             newA.append(A[j])
             if maxSum < sum(newA):
