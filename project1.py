@@ -112,27 +112,30 @@ with open('MSS_Problems.txt', 'r') as ins:
         inputArrays.append(ast.literal_eval(line))
 
 outputFile = open('MSS_Results.txt', 'w')
-outputFile.write("\nAlgorithm 1")
-outputFile.write("**************************************\n")
+
+#Algorithm 1
+outputFile.write("\nAlgorithm 1***************************************************\n")
 for array in inputArrays:
     result = enumeration(array)
     outputFile.write(str(result['maxA']) + '\n' + str(result['maxSum']) + '\n')
-outputFile.write("\nAlgorithm 2")
-outputFile.write("**************************************\n")    
+
+
+#Algorithm 2
+outputFile.write("\nAlgorithm 2***************************************************\n")
 for array in inputArrays:
     result = betterEnumeration(array)
     outputFile.write(str(result['maxA']) + '\n' + str(result['maxSum']) + '\n')
-outputFile.write("\nAlgorithm 3")
-outputFile.write("**************************************\n")	
+
+#Algorithm 3	
+outputFile.write("\nAlgorithm 3***************************************************\n")	
 for array in inputArrays:
     result, left, right = mss(array,0, len(array)-1)
     outputFile.write(str(array[left:right+1]) + '\n' + str(result) + '\n')	
 	
-	
-outputFile.write("\nAlgorithm 4")
-outputFile.write("**************************************\n")    
+#Algorithm 4
+outputFile.write("\nAlgorithm 4***************************************************\n")	   
 for array in inputArrays:
     result = linear(array)
     outputFile.write(str(result['maxA']) + '\n' + str(result['maxSum']) + '\n')
-outputFile.write("**************************************\n")
+outputFile.write("****************************************************************\n")
 outputFile.close()
