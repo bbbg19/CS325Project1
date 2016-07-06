@@ -1,6 +1,5 @@
-var = []
 
-def Linear(A)
+def linear(A)
     n = length(A)
     max_sum = -1
     ending_here_sum = -1
@@ -14,7 +13,7 @@ def Linear(A)
             max_sum =ending_here_sum
             low = ending_here_sum
             high = ending_here_high
-    return max_sum
+    return {'max':max_sum, 'A': A[low:high]}
             
     
     
