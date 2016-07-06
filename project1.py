@@ -27,7 +27,7 @@ def betterEnumeration(A):
             tempSum += A[j]
             if maxSum < tempSum:
                 maxSum = tempSum
-                maxA = A[:]
+                maxA = A[i:j+1]
                 
             
     return {'maxSum': maxSum, 'maxA': maxA}
