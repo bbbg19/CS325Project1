@@ -31,6 +31,31 @@ def betterEnumeration(A):
                 
             
     return {'maxSum': maxSum, 'maxA': maxA}
+
+
+
+#The linear implementation of max sub array
+def linear(A):
+    n = len(A)
+    max_sum = -1
+    ending_here_sum = -1
+    low = 0 
+    high = 0
+    for j in range(0, n):
+        ending_here_high = j
+        if ending_here_sum > 0:
+            ending_here_sum = ending_here_sum + A[j]
+        else:
+            ending_here_low = j
+            ending_here_sum = A[j]
+        if ending_here_sum > max_sum:
+            max_sum = ending_here_sum
+            low = ending_here_low
+            high = ending_here_high
+    maxA=A[low:high+1]
+    
+    return {'maxSum':max_sum, 'maxA': maxA}
+
                
 
 with open('MSS_Problems.txt', 'r') as ins:
@@ -46,6 +71,10 @@ for array in inputArrays:
     
 for array in inputArrays:
     result = betterEnumeration(array)
+    outputFile.write(str(result['maxA']) + '\n' + str(result['maxSum']) + '\n')
+    
+for array in inputArrays:
+    result = linear(array)
     outputFile.write(str(result['maxA']) + '\n' + str(result['maxSum']) + '\n')
 
 outputFile.close()
