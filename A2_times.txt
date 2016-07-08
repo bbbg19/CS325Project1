@@ -1,0 +1,99 @@
+Running sizes for 11
+Trial Run 1. Time: 1.7e-05
+Trial Run 2. Time: 1.2e-05
+Trial Run 3. Time: 1e-05
+Trial Run 4. Time: 1.7e-05
+Trial Run 5. Time: 1.2e-05
+Trial Run 6. Time: 1.7e-05
+Trial Run 7. Time: 1.6e-05
+Trial Run 8. Time: 1.3e-05
+Trial Run 9. Time: 1.4e-05
+Trial Run 10. Time: 1.3e-05
+Running sizes for 51
+Trial Run 1. Time: 0.00013
+Trial Run 2. Time: 0.000112
+Trial Run 3. Time: 0.000102
+Trial Run 4. Time: 0.00011
+Trial Run 5. Time: 8.6e-05
+Trial Run 6. Time: 0.000132
+Trial Run 7. Time: 9.6e-05
+Trial Run 8. Time: 8.9e-05
+Trial Run 9. Time: 0.000108
+Trial Run 10. Time: 9.3e-05
+Running sizes for 101
+Trial Run 1. Time: 0.000361
+Trial Run 2. Time: 0.000326
+Trial Run 3. Time: 0.000336
+Trial Run 4. Time: 0.000376
+Trial Run 5. Time: 0.000317
+Trial Run 6. Time: 0.00033
+Trial Run 7. Time: 0.000368
+Trial Run 8. Time: 0.000319
+Trial Run 9. Time: 0.000305
+Trial Run 10. Time: 0.000326
+Running sizes for 501
+Trial Run 1. Time: 0.007418
+Trial Run 2. Time: 0.008609
+Trial Run 3. Time: 0.007725
+Trial Run 4. Time: 0.007355
+Trial Run 5. Time: 0.008844
+Trial Run 6. Time: 0.012912
+Trial Run 7. Time: 0.012475
+Trial Run 8. Time: 0.012858
+Trial Run 9. Time: 0.013177
+Trial Run 10. Time: 0.012273
+Running sizes for 1001
+Trial Run 1. Time: 0.045869
+Trial Run 2. Time: 0.044774
+Trial Run 3. Time: 0.047429
+Trial Run 4. Time: 0.045319
+Trial Run 5. Time: 0.051138
+Trial Run 6. Time: 0.041693
+Trial Run 7. Time: 0.035929
+Trial Run 8. Time: 0.041346
+Trial Run 9. Time: 0.056968
+Trial Run 10. Time: 0.038393
+Running sizes for 5001
+Trial Run 1. Time: 1.139819
+Trial Run 2. Time: 1.124162
+Trial Run 3. Time: 1.00319
+Trial Run 4. Time: 0.850723
+Trial Run 5. Time: 0.961309
+Trial Run 6. Time: 1.029014
+Trial Run 7. Time: 1.103202
+Trial Run 8. Time: 1.238516
+Trial Run 9. Time: 1.175344
+Trial Run 10. Time: 1.009138
+Running sizes for 10001
+Trial Run 1. Time: 3.139654
+Trial Run 2. Time: 3.697572
+Trial Run 3. Time: 3.785382
+Trial Run 4. Time: 3.534413
+Trial Run 5. Time: 3.532768
+Trial Run 6. Time: 3.67882
+Trial Run 7. Time: 3.790411
+Trial Run 8. Time: 3.897881
+Trial Run 9. Time: 3.515684
+Trial Run 10. Time: 3.566506
+Running sizes for 25001
+Trial Run 1. Time: 22.447499
+Trial Run 2. Time: 22.80588
+Trial Run 3. Time: 22.129318
+Trial Run 4. Time: 21.457219
+Trial Run 5. Time: 21.900716
+Trial Run 6. Time: 21.666374
+Trial Run 7. Time: 23.736006
+Trial Run 8. Time: 23.72169
+Trial Run 9. Time: 25.739555
+Trial Run 10. Time: 23.709198
+Running sizes for 50001
+Trial Run 1. Time: 95.691303
+Trial Run 2. Time: 100.813814
+Trial Run 3. Time: 96.4347
+Trial Run 4. Time: 106.590012
+Trial Run 5. Time: 93.771005
+Trial Run 6. Time: 105.869551
+Trial Run 7. Time: 103.361597
+Trial Run 8. Time: 95.948625
+Trial Run 9. Time: 111.192938
+Trial Run 10. Time: 102.663837

@@ -74,10 +74,10 @@ def generateArray(x):
 
 
 outputFile = open('A1_times.txt', 'w')
-sizes = [11,51,101,501,1001,5001,10001,25001, 50001]
+sizes = [11,51,101,501,1001,5001]#,10001,25001, 50001]
 
 for size in sizes:
-	outputFile.write("Running sizes for " + str(size))
+	outputFile.write("Running sizes for " + str(size) + '\n')
 	#run ten trials in this size
 	for x in range (1,11):
 		myList = generateArray(size)		
