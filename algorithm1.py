@@ -19,20 +19,6 @@ def enumeration(A):
         newA = []
     return {'maxSum': maxSum, 'maxA': maxA}
     
-def betterEnumeration(A):
-    maxSum = 0
-    maxA = []
-    for i in range(0, len(A)):
-        tempSum = 0
-        for j in range(i, len(A)):
-            tempSum += A[j]
-            if maxSum < tempSum:
-                maxSum = tempSum
-                maxA = A[:]
-                
-            
-    return {'maxSum': maxSum, 'maxA': maxA}
-    
 def generateArray(x):
 	myList =[]
 	for i in range(1,x):
