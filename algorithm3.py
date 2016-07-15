@@ -73,13 +73,13 @@ def manualTest(myList, w):
 
 
 #main function
-file = open("MSS_Problems.txt", "r")
+#file = open("MSS_Problems.txt", "r")
 
-outputFile = open('MSS_Results.txt', "a")
-outputFile.write("Algorithm 3\n")
-outputFile.write("****************************************************************\n")
-for line in file.readlines():
-	print line
+#outputFile = open('MSS_Results.txt', "a")
+#outputFile.write("Algorithm 3\n")
+#outputFile.write("****************************************************************\n")
+#for line in file.readlines():
+#	print line
 	#manualTest(line,outputFile)
 	#manualTest([2, 9, 8, 6, 5, -11, 9, -11, 7, 5, -1, -8, -3, 7 -2],outputFile)
 	#manualTest([10, -11, -1, -9, 33, -45, 23, 24, -1, -7 -8, 19],outputFile)
@@ -87,19 +87,19 @@ for line in file.readlines():
 	#manualTest([3, 2, 1, 1, -8, 1, 1, 2, 3],outputFile)
 	#manualTest([12, 99, 99, -99, -27, 0, 0, 0, -3, 10],outputFile)
 	#manualTest([-2, 1, -3, 4, -1, 2, 1, -5, 4],outputFile)
-outputFile.write("****************************************************************\n")
+#outputFile.write("****************************************************************\n")
 #experimental partition 
 
-sizes = [11,51,101,501,1001,5001,10001,25001, 50001]
+sizes = [11,51,101,501,1001,5001,10001,20001, 30001, 50001]
 
-#for size in sizes:
-#	print "Running sizes for " + str(size)
+for size in sizes:
+	print "Running sizes for " + str(size)
 	#run ten trials in this size
-#	for x in range (1,11):
-#		To = time.time()
-#		myList = generateArray(size)		
-#		value, left, right= mss(myList,0, len(myList)-1)
-#		print value
-#		print "Trial Run " + str(x) + ". Time: " + str(time.time()-To)
+	for x in range (1,11):
+		To = time.time()
+		myList = generateArray(size)		
+		value, left, right= mss(myList,0, len(myList)-1)
+		print value
+		print "Trial Run " + str(x) + ". Time: " + str(time.time()-To)
 	
 	
