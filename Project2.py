@@ -47,6 +47,21 @@ def dynamicCoins(inputArray, inputValue):
 	return solutionArray[inputValue] 
 	#print ('\n')
 
+def greedyCoin(inputArray, inputValue):
+	coins = []
+	changeToMake = inputValue
+	coinVals = inputArray[:]
+	coinVals.reverse()
+	totalCoins = 0
+	for coin in coinVals:
+		coinCount = 0
+		while changeToMake >= coin:
+			coinCount += 1
+			totalCoins += 1
+			changeToMake -= coin
+		coins.append(coinCount)
+	coins.reverse()
+	return {"coins": coins, "numCoins": totalCoins}
 	
 	
 #Main Method
@@ -68,7 +83,15 @@ with open(inputFileName + '.txt', 'r') as ins:
 			inputArrays.append(ast.literal_eval(line))
 		index +=1
 	
-outputFile = open(inputFileName + 'change.txt', 'w')		
+outputFile = open(inputFileName + 'change.txt', 'w')
+
+outputFile.write("Algorithm 2: Change Greedy**********************************\n")
+
+for values in range(0,len(inputArrays)):
+	result = greedyCoin(inputArrays[values],inputValues[values])
+	#print result['values']
+	outputFile.write(str(result["coins"]) + '\n')
+	outputFile.write(str(result["numCoins"]) + '\n')
 
 outputFile.write("Algorithm 2: Change DP**************************************\n")
 
