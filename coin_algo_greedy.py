@@ -8,7 +8,7 @@ def greedyCoin (denoms, inputValue):
         if temp >= denoms[size]:
             temp = temp - denoms[size]
             coins[count] = denoms[size]
-            count++
+            count += 1
         else:
-            size--
+            size -= 1
     return coins
