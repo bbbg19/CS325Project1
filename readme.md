@@ -1,9 +1,7 @@
 ## Synopsis
 
-This program finds the maximum sum subarray (MSS) from a given array.  It uses four different algorithms to find this MSS to compare the run times of the algorithms.
+This program has a greedy algorithm and a dynamic programming algorithm.  Both algorithms are used to find the number of coins to make a certain amount of change for a given set of coin denominations.
 
-## Tests
+## Running the Program
 
-Inside of a file titled 'MSS_Problems.txt' have at least one list such as A = [1, 2, 3, 4]:
-The program will call enumeration(A), betterEnumeration(A), getMSS(A), or linear(A) to find the MSS for each list in the input file.
-The output will be saved in a file called 'MSS_Results.txt'
+To run the program, type 'python Project2.py [filename]' where [filename] is the name of the file containing the data you wish to use for this program.  If you wish to use a file named 'Coin1.txt', type 'python Project2.py Coin1' and it will open the file named Coin1.txt.  The output will be in a file named '[filename] change.txt' where it would be 'Coin1 change.txt' for the example given earlier.  The output will be presented first for the greedy algorithm followed by the dynamic programing algorithm.
