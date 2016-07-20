@@ -85,7 +85,7 @@ with open(inputFileName + '.txt', 'r') as ins:
 	
 outputFile = open(inputFileName + 'change.txt', 'w')
 
-outputFile.write("Algorithm 2: Change Greedy**********************************\n")
+outputFile.write("Algorithm 1: Change Greedy**********************************\n")
 
 for values in range(0,len(inputArrays)):
 	result = greedyCoin(inputArrays[values],inputValues[values])
