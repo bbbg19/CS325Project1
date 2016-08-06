@@ -28,7 +28,7 @@ def printResults (outfile, resultsData, distanceCovered):
 	
 	
 def distance(point1, point2):
-	calcDistance = math.sqrt(math.pow(point2['x']-point1['x'],2) + math.pow(point2['y']-point1['y'],2))
+	calcDistance = round(math.sqrt(math.pow(point2['x']-point1['x'],2) + math.pow(point2['y']-point1['y'],2)))
 	return calcDistance
 	
 	
@@ -36,6 +36,7 @@ def main(inputFile, outputFile):
 	#Read in input Files
 	input_point_labels = read_input_vals(inputFile)
 	
+	print (distance(input_point_labels[1],input_point_labels[2]))
 	#Final Algorithm
 	start = time.time();
 	distanceCovered, path = tspRun(input_point_labels)
@@ -47,10 +48,11 @@ def main(inputFile, outputFile):
 	
 def tspRun(inputValues):
 	path =[]
-	originalPoint= inputValues[0]
-	nextPoint = inputValues[0]
-	path.append(0)
-	del inputValues[0]
+	startingPoint = inputValues[1]
+	originalPoint= inputValues[1]
+	nextPoint = inputValues[1]
+	path.append(1)
+	del inputValues[1]
 	originalIndex=0
 	shortestPath = 10000000000000
 	distanceCovered=0
@@ -60,8 +62,6 @@ def tspRun(inputValues):
 		deleteIndex=0	
 		shortestPath = 10000000000000
 		for index, point in enumerate(inputValues):			
-			x1= point['x']
-			y1= point['y']
 			newPath = distance(originalPoint,   point)
 			if newPath <shortestPath:
 				shortestPath = newPath
@@ -74,11 +74,21 @@ def tspRun(inputValues):
 		originalPoint=nextPoint
 		
 		#store
+	
 		path.append(originalIndex)
 		distanceCovered+= shortestPath
+	#add return trip 
+	
+	distanceCovered += distance(startingPoint, originalPoint)
 	return distanceCovered, path 
+
+
+#Computes uppear and lower bounds, then finds point closest in the bottom left	
+def findOptimalStartingLocation(inputValues):
+	optimalPoint = 0
 	
-	
+
+
 	
 if __name__ == '__main__':
 	main(sys.argv[1], sys.argv[2])

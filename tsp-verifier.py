@@ -62,9 +62,10 @@ def checksolution(cities, value, cityorder):
     # calculate the length of the tour given by cityorder:
     n = len(cities)
     dist = 0
-    for i in range(n):
+	
+    for i in range(n):     
         dist = dist + distance(cities[cityorder[i]],cities[cityorder[i - 1]])
-    
+       
     # check value of solution
     if dist == value:
         print('solution found of length ', value)
