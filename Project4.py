@@ -10,9 +10,10 @@ def read_input_vals(in_file):
 	line = file.readline()
 	while len(line) > 1:
 		line_parse = re.findall(r'[^,;\s]+', line)
+		index = int(line_parse[0])
 		x = int(line_parse[1])
 		y = int(line_parse[2])
-		points.append({'x': x,  'y': y})
+		points.append({'index': index , 'x': x,  'y': y})
 		line = file.readline()
 	
 		
@@ -25,7 +26,7 @@ def printResults (outfile, resultsData, distanceCovered):
 	outFile = open(outfile,'w')
 	outFile.write(str(distanceCovered) + '\n')
 	for index, points in enumerate(resultsData):
-		outFile.write(str(index) + " " + str(points['x']) + " " + str(points['y']) + '\n' )	
+		outFile.write(str(points) + '\n' )	
 	return
 	
 	
@@ -50,8 +51,9 @@ def tspRun(inputValues):
 	path =[]
 	originalPoint= inputValues[0]
 	nextPoint = inputValues[0]
-	path.append(originalPoint)
+	path.append(0)
 	del inputValues[0]
+	originalIndex=0
 	shortestPath = 10000000000000
 	distanceCovered=0
 	deleteIndex=0
@@ -69,12 +71,15 @@ def tspRun(inputValues):
 				shortestPath = newPath
 				nextPoint = point 	
 				deleteIndex= index
+				originalIndex = point['index']
 			#print "Delete Index: " + str(deleteIndex)
 			#calculate shortest distance between paths
 			#record index of smallest path		
 		del inputValues [deleteIndex]
 		originalPoint=nextPoint
-		path.append(nextPoint)
+		
+		#store
+		path.append(originalIndex)
 		distanceCovered+= shortestPath
 		#print "Next Point: " + str(nextPoint)
 	#print out results
