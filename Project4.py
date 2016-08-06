@@ -83,9 +83,6 @@ def tspRun(inputValues):
 	return distanceCovered, path 
 
 
-#Computes uppear and lower bounds, then finds point closest in the bottom left	
-def findOptimalStartingLocation(inputValues):
-	optimalPoint = 0
 	
 
 
