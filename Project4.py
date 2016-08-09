@@ -37,22 +37,43 @@ def main(inputFile, outputFile):
 	input_point_labels = read_input_vals(inputFile)
 	
 	print (distance(input_point_labels[1],input_point_labels[2]))
+	
+	
 	#Final Algorithm
-	start = time.time();
-	distanceCovered, path = tspRun(input_point_labels)
-	print ("Time: " + str(time.time() - start))
+	distanceCovered, path = optimizetsp(input_point_labels)
 	
 	#Print out results 
 	printResults(outputFile, path, distanceCovered)
+
+def optimizetsp(input_point_labels):
+	#Final Algorithm
+	myTime = 0
+	startPosition = 0
+	minimalDistance = 1000000000000
+	optimalPath =[]
+	originalInputs = input_point_labels[:]
+	start = time.time();
+	while myTime < 175 and startPosition < len(originalInputs)-1: 
+		input_point_labels = originalInputs [:]		
+		
+		distanceCovered, path = tspRun(input_point_labels, startPosition,start)
+		#check if new distance is less than optimal 
+		if distanceCovered <minimalDistance:
+			minimalDistance = distanceCovered
+			optimalPath = path 	
+		myTime = time.time() - start
+		startPosition += 1
+		print "Time " + str(myTime)
 	
+	return 	minimalDistance, optimalPath
 	
-def tspRun(inputValues):
+def tspRun(inputValues,startPosition, startTime):
 	path =[]
-	startingPoint = inputValues[1]
-	originalPoint= inputValues[1]
-	nextPoint = inputValues[1]
-	path.append(1)
-	del inputValues[1]
+	startingPoint = inputValues[startPosition]
+	originalPoint= inputValues[startPosition]
+	nextPoint = inputValues[startPosition]
+	path.append(startPosition)
+	del inputValues[startPosition]
 	originalIndex=0
 	shortestPath = 10000000000000
 	distanceCovered=0
@@ -61,6 +82,12 @@ def tspRun(inputValues):
 	while len(inputValues) > 0: 
 		deleteIndex=0	
 		shortestPath = 10000000000000
+		#add abort condition for time out
+		myTime = time.time() - startTime
+		if myTime>175:
+			distanceCovered =100000000000000
+			return distanceCovered, path 
+		
 		for index, point in enumerate(inputValues):			
 			newPath = distance(originalPoint,   point)
 			if newPath <shortestPath:

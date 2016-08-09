@@ -8,17 +8,21 @@ def read_input_vals(in_file):
 	points = []
 	file = open(in_file,'r')
 	line = file.readline()
+	
 	while len(line) > 1:
 		line_parse = re.findall(r'[^,;\s]+', line)
+		print line
 		index = int(line_parse[0])
 		x = int(line_parse[1])
 		y = int(line_parse[2])
-        distance = distanceOrigin(x, y)
-        points.append({'index': index , 'x': x, 'y': y, 'distance': distance})
-        line = file.readline()
+		distance = distanceOrigin(x, y)
+        
+		points.append({'index': index , 'x': x, 'y': y, 'distance': distance})
+		line = file.readline()
 	return points 
 
 
+	
 def printResults (outfile, resultsData, distanceCovered):
 	print "Results can be found in " + outfile
 	outFile = open(outfile,'w')
@@ -43,6 +47,7 @@ def distance(point1, point2):
 	
 def main(inputFile, outputFile):
 	#Read in input Files
+	
 	input_point_labels = read_input_vals(inputFile)
 	
 	print (distance(input_point_labels[1],input_point_labels[2]))
